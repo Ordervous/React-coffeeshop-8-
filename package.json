@@ -16,7 +16,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "mock-server": "json-server src/mockData.json --port 3002"
   },
   "eslintConfig": {
     "extends": "react-app"
