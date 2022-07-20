@@ -7,6 +7,8 @@ import EditProduct from './EditProduct'
 import ProductDetail from './ProductDetail'
 
 
+
+// yay my code is back that was scary
 function App() {
   return (
    <BrowserRouter>
