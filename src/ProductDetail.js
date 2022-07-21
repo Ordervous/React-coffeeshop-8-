@@ -49,13 +49,14 @@ function ProductDetail(props) {
     }
 
     function productCard() {
-        let { id, productName, description, price } = product
+        let { id, productName, description, price, image } = product
         return (
             <Card className="align-self-start w-25">
+            <Card.Img variant="top" src={image} />
                 <Card.Body>
                     <Card.Title>{productName}</Card.Title>
                     <Card.Text>
-                        <strong>Price:</strong> <span>{price}</span>
+                        <strong>Price:</strong> <span>${price}</span>
                     </Card.Text>
                     <Card.Subtitle className="mb-2 text-muted">{description}</Card.Subtitle>
                     <Link to={`/products/${id}/edit`} className="btn btn-primary mx-3">Edit</Link>
