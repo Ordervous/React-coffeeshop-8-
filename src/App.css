@@ -1,0 +1,33 @@
+.card-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    align-items: center;
+    
+}
+
+.cards {
+    margin: 20px;
+    display: flex;
+    max-width: 200px;
+}
+
+.viewcard {
+    margin: 50px;
+    width:fit-content
+}
+
+.contact {
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+   
+}
+
+.footer{
+       position: absolute;
+        bottom: 0;
+        /* height: calc(100% - 60px); */
+     }

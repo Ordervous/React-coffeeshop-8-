@@ -2,45 +2,53 @@
   "products": [
     {
       "id": 1,
-      "productName": "Coffee",
-      "description": "Bottomless House Roasted Coffee",
-      "price": 2.5,
-      "image": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/newscms/2019_33/2203981/171026-better-coffee-boost-se-329p.jpg"
+      "name": "Tommy Watson",
+      "artistname": "Tommy Watson",
+      "born": 1935,
+      "piecename": "Pikarli",
+      "painted": 2009,
+      "imgurl": "https://image.invaluable.com/housePhotos/Hindman/62/727962/H0587-L296102374.jpg",
+      "price": 70000
     },
     {
       "id": 2,
-      "productName": "Soda",
-      "description": "Choice of any fountain sparkling beverage",
-      "price": 2.5,
-      "image": "https://cdn.shopify.com/s/files/1/0952/0426/t/25/assets/1655872687_0.jpg"
+      "name": "Naata Nungurrayi",
+      "artistname": "Naata Nungurrayi",
+      "born": 1932,
+      "piecename": "Untitled Aena23-1212KM",
+      "painted": 2003,
+      "imgurl": "https://res.cloudinary.com/drw7ksncz/image/upload/c_fill,h_1020,w_1640/oig2bhlexrf1hapjf9mj",
+      "price": 220000
     },
     {
       "id": 3,
-      "productName": "Chocolate Milkshake",
-      "description": "Dark chocolate whipped with locally sourced milk and sweetened with sugar",
-      "price": 2.5,
-      "image": "https://www.thespruceeats.com/thmb/LlR9HScfODtlFcHNdZWXSNHkXcA=/1500x1000/filters:fill(auto,1)/chocolate-milkshake-4587581-hero-1-22c8a039103c413dafd75f4f4c39ddd4.JPG"
+      "name": "Mitch Cairns",
+      "artistname": "Mitch Cairns",
+      "born": 1984,
+      "piecename": "Draught",
+      "painted": 2019,
+      "imgurl": "https://thecommercialgallery.com/images/thumbed/780_650_r_e6dad3548951dcf8575c0ba89709e11e.jpg",
+      "price": 25000
     },
     {
       "id": 4,
-      "productName": "Pecan Pie",
-      "description": "A slice of our exquisite Pecan Pie",
-      "price": 2.5,
-      "image": "https://img.taste.com.au/xRvF1Ybi/taste/2016/11/pecan-pie-63267-1.jpeg"
+      "name": "Alan Ibell",
+      "artistname": "Alan Ibell",
+      "born": 1983,
+      "piecename": "The missing journal entry",
+      "painted": 2022,
+      "imgurl": "https://artlogic-res.cloudinary.com/w_1600,h_1600,c_limit,f_auto,fl_lossy,q_auto/artlogicstorage/jhanamillers/images/view/ad433e29f2e815d68d3e0586e030d5f3j/jhanamillersgallery-alan-ibell-the-missing-journal-entry-2022.jpg",
+      "price": 15000
     },
     {
-      "productName": "Croissant",
-      "description": "French butter pastry",
-      "price": "2",
-      "image": "https://biancolievito.com/wp-content/uploads/2016/04/shutterstock_574919893.jpg",
+      "name": "Doug Argue",
+      "artistname": "Doug Argue",
+      "born": "1970",
+      "piecename": "Genesis",
+      "painted": "2015",
+      "imgurl": "https://d2j6dbq0eux0bg.cloudfront.net/images/30036159/1462160265.jpg",
+      "price": "50000",
       "id": 5
-    },
-    {
-      "productName": "Bagel with cream cheese",
-      "description": "Toasted with your choice of creamed cheese",
-      "price": "2.5",
-      "image": "https://media.istockphoto.com/photos/bagel-and-cream-cheese-picture-id450435923?k=20&m=450435923&s=612x612&w=0&h=izfATsSD-0AllLE-2NgSdEIZpFENoEPOLEq6UiSsziU=",
-      "id": 6
     }
   ]
 }

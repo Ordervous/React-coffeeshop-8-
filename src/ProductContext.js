@@ -51,14 +51,24 @@ export const ProductProvider = (props) => {
             })
     }
 
+
+
+    function filterProducts(param) {
+        return axios.get(`http://localhost:3002/products/?q=${param}`).then(response => {
+            return new Promise(resolve => resolve(response.data))
+        })
+    }
+
     return (
         <ProductContext.Provider
             value={{
                 products,
+                refreshProducts,
                 getProduct,
                 deleteProduct,
                 addProduct,
-                updateProduct
+                updateProduct,
+                filterProducts
             }}
         >
             {props.children}

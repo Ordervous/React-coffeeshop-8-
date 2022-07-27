@@ -1,36 +1,45 @@
 import React from 'react'
-import ListGroup from 'react-bootstrap/ListGroup'
-import Stack from 'react-bootstrap/Stack'
-import { Link, Outlet } from 'react-router-dom'
 import { ProductContext } from './ProductContext'
+// import ProductDetail from './ProductDetail'
+import Card from "react-bootstrap/Card"
+import { Link, NavLink } from 'react-router-dom'
+import './ProductList.css'
+// import { Outlet } from 'react-router-dom'
+// import Product from './Product'
 
 function ProductList(props) {
+
     function productList(products) {
         if (products === null) return
         return products.map((product) =>
-            <ListGroup.Item key={product.id}>
-                <Link to={`/products/${product.id}`} key={product.id} >
-                    {product.productName} - ${product.price}
-                </Link>
-            </ListGroup.Item>
+
+            <Card className='cards' key={product.id}>
+                <NavLink to={`/view/${product.id}`} key={product.id} >
+                    <Card.Img variant="top" src={product.imgurl} />
+                    <Card.Body>
+                        <Card.Text style={{ textAlign: 'center' }}>
+                            {product.artistname} ${product.price}
+                        </Card.Text>
+                    </Card.Body>
+                </NavLink>
+            </Card>
+
         )
     }
 
     return (
         <>
-            <h1>Products</h1>
-            <Stack direction="horizontal" gap={3}>
-                <ListGroup className="align-self-start w-75">
-                    <ProductContext.Consumer>
-                        {({ products }) => (
-                            productList(products)
-                        )}
-                    </ProductContext.Consumer>
-                </ListGroup>
-                <Outlet />
-            </Stack>
+            <h1 style={{ textAlign: 'center' }}>Artworks</h1>
+            <div className='card-container'>
+                <ProductContext.Consumer>
+                    {({ products }) => (
+                        productList(products)
+                    )}
+                </ProductContext.Consumer>
+            </div>
         </>
     )
+
 }
 
 export default ProductList

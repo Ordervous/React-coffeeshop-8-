@@ -5,6 +5,7 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import { ProductContext } from './ProductContext'
 import { useContext, useState, useEffect } from 'react'
 import { Alert } from "react-bootstrap";
+// import axios from "axios";
 
 function ProductDetail(props) {
 
@@ -14,16 +15,15 @@ function ProductDetail(props) {
     let { getProduct, deleteProduct } = useContext(ProductContext)
     let [product, setProduct] = useState()
 
-
     useEffect(() => {
         async function fetch() {
-            await getProduct(params.productId)  
-                .then((product) => setProduct(product)) 
-        } 
+            await getProduct(params.productId)
+                .then((product) => setProduct(product))
+        }
         fetch()
     }, [params.productId]);
 
-    let [error, setError] = useState() 
+    let [error, setError] = useState()
 
     useEffect(() => {
         setError(null)
@@ -36,7 +36,7 @@ function ProductDetail(props) {
     }, [params.productId, getProduct])
 
     function errorMessage() {
-        return <Alert variant="danger">Due to the Covid pandemic this product is out of stock: {error}</Alert>
+        return <Alert variant="danger">Stockroom is empty: {error}</Alert>
     }
 
     function handleDeleteProduct(id) {
@@ -49,23 +49,30 @@ function ProductDetail(props) {
     }
 
     function productCard() {
-        let { id, productName, description, price, image } = product
+        let { id, artistname, born, piecename, painted, imgurl, price } = product
         return (
-            <Card className="align-self-start w-25">
-            <Card.Img variant="top" src={image} />
-                <Card.Body>
-                    <Card.Title>{productName}</Card.Title>
-                    <Card.Text>
-                        <strong>Price:</strong> <span>${price}</span>
-                    </Card.Text>
-                    <Card.Subtitle className="mb-2 text-muted">{description}</Card.Subtitle>
-                    <Link to={`/products/${id}/edit`} className="btn btn-primary mx-3">Edit</Link>
-                    <Button variant="danger" onClick={handleDeleteProduct.bind(this, id)}>Delete</Button>
-                </Card.Body>
-            </Card>
+            <div>
+                <Button className="btn-dark mx-3" onClick={() => navigate(-1)}>Back</Button>
+                <Card className="viewcard" key={product.id}>
+
+                    <Card.Img variant="top" src={imgurl} />
+                    <Card.Body>
+                        <Card.Title>{artistname} {born}</Card.Title>
+                        <Card.Subtitle className="mb-2 text-muted">{piecename}</Card.Subtitle>
+                        <Card.Subtitle className="mb-2 text-muted">{painted}</Card.Subtitle>
+                        <Card.Text>
+                            <strong>Price:</strong> <span>${price}</span>
+                        </Card.Text>
+                        <Link to={`/contactus`} className="btn btn-success mx-3">Buy</Link>
+                        <Link to={`/view/${id}/edit`} className="btn btn-primary mx-3">Edit</Link>
+                        <Button variant="danger" onClick={handleDeleteProduct.bind(this, id)}>Delete</Button>
+                    </Card.Body>
+                </Card>
+            </div>
         )
+
     }
-    
+
 
     if (error) return errorMessage()
     if (product === undefined) return loading()
@@ -74,3 +81,13 @@ function ProductDetail(props) {
 }
 
 export default ProductDetail
+
+  // const hasFetchedData = useRef(false)
+
+   // useEffect(() => {
+    //     if (!hasFetchedData.current) {
+    //         const res = axios.get("http://localhost:3002/products");
+    //         setProduct(res);
+    //         hasFetchedData.current = true;
+    //     }
+    // }, [])

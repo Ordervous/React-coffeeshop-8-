@@ -9,15 +9,17 @@ function ProductForm() {
     let params = useParams()  
     let [product, setProduct] = useState({
         id: params.productId,
-        productName: "",
-        description: "",
-        price: "",
-        image: ""
+        artistname: "",
+        born: "",
+        piecename: "",
+        painted: "",
+        imgurl: "",
+        price: ""
     })
 
     let { getProduct, addProduct, updateProduct } = useContext(ProductContext) 
     let navigate = useNavigate()  
-    let { id, productName, description, price, image } = product
+    let { id, artistname, born, piecename, painted, imgurl, price } = product
 
     useEffect(() => {
         if (id === undefined) return
@@ -52,22 +54,30 @@ function ProductForm() {
 
     return (
         <Form onSubmit={handleSubmit}>
-            <Image src={image} className="img-thumbnail"/>
+            <Image src={imgurl} className="img-thumbnail"/>
             <Form.Group className="mb-3" >
-                <Form.Label>Product Name</Form.Label>
-                <Form.Control type="text" name="productName" value={productName} onChange={handleChange} />
+                <Form.Label>Artist Name</Form.Label>
+                <Form.Control type="text" name="artistname" value={artistname} onChange={handleChange} />
             </Form.Group>
             <Form.Group className="mb-3" >
-                <Form.Label>Description</Form.Label>
-                <Form.Control type="text" name="description" value={description} onChange={handleChange} />
+                <Form.Label>Year Born</Form.Label>
+                <Form.Control type="text" name="born" value={born} onChange={handleChange} />
+            </Form.Group>
+            <Form.Group className="mb-3" >
+                <Form.Label>Name of Piece</Form.Label>
+                <Form.Control type="text" name="piecename" value={piecename} onChange={handleChange} />
+            </Form.Group>
+            <Form.Group className="mb-3" >
+                <Form.Label>Year Painted</Form.Label>
+                <Form.Control type="text" name="painted" value={painted} onChange={handleChange} />
+            </Form.Group>
+            <Form.Group className="mb-3" >
+                <Form.Label>Image Url</Form.Label>
+                <Form.Control type="text" name="imgurl" value={imgurl} onChange={handleChange} />
             </Form.Group>
             <Form.Group className="mb-3" >
                 <Form.Label>Price</Form.Label>
-                <Form.Control type="number" name="price" value={price} onChange={handleChange} />
-            </Form.Group>
-            <Form.Group className="mb-3" >
-                <Form.Label>Copy & paste image url</Form.Label>
-                <Form.Control type="text" name="image" value={image} onChange={handleChange} />
+                <Form.Control type="text" name="price" value={price} onChange={handleChange} />
             </Form.Group>
             <Button type="submit">Save</Button>
         </Form>
